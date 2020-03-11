@@ -7,7 +7,7 @@ while (isNaN(input1)) {
 }
 input2 = readline.question("Please enter 2nd number:\n")
 while (isNaN(input2)) {
-    input2 = readline.question("PLEASE enter 1st NUMBER:\n")
+    input2 = readline.question("PLEASE enter 2nd NUMBER:\n")
 }
 let operation = readline.question("Please enter math operation (add, sub, multi, div):\n")
 let oppCheck = operation.toLowerCase()
