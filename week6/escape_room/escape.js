@@ -123,8 +123,8 @@ function escapeRoom() {
             decision = readline.question("You must choose from the options given!\n1. Check the bucket?\n2. The  in the wall\nUse numbers to decide.\n")
         }
         if(decision == 1){
-            console.log("Lets just say there is definitely not a key in the bucket...")
-            decision = readline.question("Where do you look now?\n1. What IS in the bucket?\n2. The hole in the wall\nUse numbers to decide.\n")
+            console.log("That's a head..")
+            decision = readline.question("Where do you look now?\n1. WAIT A HEAD??\n2. The hole in the wall\nUse numbers to decide.\n")
             while(decision != 1 && decision != 2){
                 decision = readline.question("You must choose from the options given!\n1. WAIT A HEAD??\n2. The hole in the wall\nUse numbers to decide.\n")
             }
@@ -161,6 +161,6 @@ function escapeRoom() {
     } else{
         console.log("KEY DETECT\nBOMB IS DISARMED\nYOU HAVE EARNED FREEDOM\nYou see the door swing open on its own! Your escape is complete!")
         return
-    }cd 
+    }
 }
 escapeRoom()
