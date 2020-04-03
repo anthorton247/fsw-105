@@ -12,6 +12,7 @@ function escapeRoom() {
     if(decision == 2){
         console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
         escapeRoom()
+        return
     } else {
         console.log("The door is locked!")
         decision = readline.question("It seems you need a key!\nWhere do you look?\n1. A bucket\n2. The hole in the wall\n3. Your pockets\nUse numbers to decide.\n")
@@ -52,11 +53,13 @@ function escapeRoom() {
                     } else{
                         console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                         escapeRoom()
+                        return
                     } 
                 }
             } else if(decision == 2){
                 console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                 escapeRoom()
+                return
             } else {
                 console.log("Nothing in here but lint and crumbs.")
                 decision = readline.question("Where do you look now?\n1. WAIT A HEAD??\n2. The hole in the wall\nUse numbers to decide.\n")
@@ -74,15 +77,18 @@ function escapeRoom() {
                     } else {
                         console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                         escapeRoom()
+                        return
                     }
                 } else {
                     console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                     escapeRoom()
+                    return
                 }
             }
         } else if(decision == 2){
             console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
             escapeRoom()
+            return
         } else {
             console.log("Nothing in here but lint and crumbs.")
             decision = readline.question("Where do you look now?\n1. Check the bucket?\n2. The hole in the wall\nUse numbers to decide.\n")
@@ -106,16 +112,19 @@ function escapeRoom() {
                     } else {
                         console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                         escapeRoom()
+                        return
                     }
                 } else {
                     console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                     escapeRoom()
+                    return
                 }      
             }
         } 
     } else if(decision == 2){
         console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
         escapeRoom()
+        return
     } else {
         console.log("Nothing in here but lint and crumbs.")
         decision = readline.question("Where do you look now?\n1. Check the bucket?\n2. The hole in the wall\nUse numbers to decide.\n")
@@ -139,14 +148,17 @@ function escapeRoom() {
                 } else {
                     console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                     escapeRoom()
+                    return
                 }
             } else {
                 console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
                 escapeRoom()
+                return
             }      
         } else {
             console.log("SURPRISE BOMB!\nYOU ARE DEAD!\nGAME OVER!")
             escapeRoom()
+            return
         }
     }
     console.log("For SOME reason whether twisted or desperate you inspect the head.\nUpon shaking you hear a rattling in the mouth.\nYou open it to find the key.")
