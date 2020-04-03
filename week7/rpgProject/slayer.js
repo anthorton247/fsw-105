@@ -73,7 +73,7 @@ function advanceOrStats() {
     }
     while(movement === "true"){
         summonTime()
-        if(summon != 1 && summon != 2 && summon != 9){
+        if(summon != 1 && summon != 3 && summon != 9){
         console.log("No oppenents appear")
         advanceOrStats()
         } else {
