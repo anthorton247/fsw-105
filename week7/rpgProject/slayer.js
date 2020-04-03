@@ -13,7 +13,7 @@ let bobGhoul = {
     name: "Bob Ghoul",
     items: ["Gold Amulet", "Eterna Sword", "Lords Bone Crown", "Ring of Solstice", "Orb of Enlightment"],
     HP: 50,
-    attacK: 1,
+    attack: 1,
     summonNum: 1
 }
 
@@ -39,11 +39,11 @@ function fleeTime() {flee = Math.floor(Math.random() * 3)}
 let sAttLand = 0
 function sAttOdds() {sAttLand = Math.floor(Math.random() * 3)}
 
-let strongAttack =  0
-function sAttackTime(){strongAttack = Math.floor(Math.random() * 10) + 4}
+let strongattack =  0
+function sattackTime(){strongattack = Math.floor(Math.random() * 10) + 4}
 
-let quickAttack = 0
-function quickAttackTime(){quickAttack = Math.floor(Math.random() * 5) + 2}
+let quickattack = 0
+function quickattackTime(){quickattack = Math.floor(Math.random() * 5) + 2}
 
 let victoryPrize = 0
 function vicPrizeDecider(){victoryPrize= Math.floor(Math.random() * 5)}
@@ -99,30 +99,30 @@ function advanceOrStats() {
 
 function battle(enemy, character){
     while(enemy.HP > 0){
-        let decision = readline.question("What would you like to do?\n1. Strong Attack\n2. Quick Attack\n3. Flee\n4. View Stats\nUse numbers to decide\n")
+        let decision = readline.question("What would you like to do?\n1. Strong attack\n2. Quick attack\n3. Flee\n4. View Stats\nUse numbers to decide\n")
         while(decision != 1 && decision != 2 && decision != 3 && decision != 4){
-            decision = readline.question("Please use options provided\n1. Strong Attack\n2. Quick Attack\n3. Flee\n4. View Stats\nUse numbers to decide\n")
+            decision = readline.question("Please use options provided\n1. Strong attack\n2. Quick attack\n3. Flee\n4. View Stats\nUse numbers to decide\n")
         }
     
         if(decision == 1){
             sAttOdds()
             if(sAttLand == 1){
-                sAttackTime()
-                console.log("You landed a hit for " + strongAttack + " damage!\nEnemy too stunned to swing back!")
-                enemy.HP = enemy.HP - strongAttack
+                sattackTime()
+                console.log("You landed a hit for " + strongattack + " damage!\nEnemy too stunned to swing back!")
+                enemy.HP = enemy.HP - strongattack
             } else {
-                console.log("You missed...\n the " + enemy.name + " attacked back for " + enemy.attacK + " damage!")
-                character.HP = character.HP - enemy.attacK
+                console.log("You missed...\n the " + enemy.name + " attacked back for " + enemy.attack + " damage!")
+                character.HP = character.HP - enemy.attack
                 if(character.HP <= 0){
                     console.log("GAME OVER!\n" + character)
                 }
             }
         } else if(decision == 2){
-            quickAttackTime()
-            console.log("You switfly attacked for " + quickAttack + " damage!")
-            enemy.HP = enemy.HP - quickAttack
-            console.log("The " + enemy.name + " attacked back for " + enemy.attacK + " damage!")
-            character.HP = character.HP - enemy.attacK
+            quickattackTime()
+            console.log("You switfly attacked for " + quickattack + " damage!")
+            enemy.HP = enemy.HP - quickattack
+            console.log("The " + enemy.name + " attacked back for " + enemy.attack + " damage!")
+            character.HP = character.HP - enemy.attack
             if(character.HP <= 0){
                 console.log("GAME OVER!\n" + character)
             }
@@ -136,8 +136,8 @@ function battle(enemy, character){
                 console.log("You escaped!")
                 advanceOrStats()
             } else {
-                console.log("The enemy cuts you off and attacks for " + enemy.attacK + " damage!")
-                character.HP = character.HP - enemy.attacK
+                console.log("The enemy cuts you off and attacks for " + enemy.attack + " damage!")
+                character.HP = character.HP - enemy.attack
                 if(character.HP <= 0){
                     console.log("GAME OVER!\n" + character)
                 }
