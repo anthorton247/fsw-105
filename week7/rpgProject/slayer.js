@@ -8,19 +8,20 @@ let summon = 0
 function summonTime(){summon = Math.floor(Math.random() * 10)} 
 let bobGhoulRessurection = 50
 let dracoKnightRessurection = 50
+
 let bobGhoul = {
     name: "Bob Ghoul",
     items: ["Gold Amulet", "Eterna Sword", "Lords Bone Crown", "Ring of Solstice", "Orb of Enlightment"],
     HP: 50,
-    attacK: "1",
+    attacK: 1,
     summonNum: 1
 }
 
 let dracoKnight = {
-    name: "Draco Night",
+    name: "Draco Knight",
     items: ["Staff of Malice", "Plated Armor of Sun", "Holy Medallion", "Rubied Chalice", "Demon's Bane"],
     HP: 75,
-    attack: "3",
+    attack: 3,
     summonnNum: 3
 }
 
@@ -28,19 +29,25 @@ let deathKing = {
     name: "Death King",
     items: ["Rules of Infinite", "Universe's Tears", "Grim's Cape", "Paragon's Laws", "Soul of the Creator"],
     HP: 250,
-    attack: "5",
+    attack: 5,
     summonNum: 9
 }
+
 let flee = 0 
 function fleeTime() {flee = Math.floor(Math.random() * 3)}
+
 let sAttLand = 0
 function sAttOdds() {sAttLand = Math.floor(Math.random() * 3)}
+
 let strongAttack =  0
 function sAttackTime(){strongAttack = Math.floor(Math.random() * 10) + 4}
+
 let quickAttack = 0
 function quickAttackTime(){quickAttack = Math.floor(Math.random() * 5) + 2}
+
 let victoryPrize = 0
 function vicPrizeDecider(){victoryPrize= Math.floor(Math.random() * 5)}
+
 let victoryHealth = 0
 function vicHealthDecider() {victoryHealth = Math.floor(Math.random() * 51) + 20}
 
@@ -75,13 +82,13 @@ function advanceOrStats() {
     }
     
     while(movement === "false"){
-        if(summon == 1){
+        if(summon == bobGhoul.summonNum){
             console.log("A Bob Ghoul has appear!")
             battle(bobGhoul, character)
-        } else if(summon == 2){
+        } else if(summon == dracoKnight.summonnNum){
             console.log("A Draco Knight has appeared!")
             battle(dracoKnight, character) 
-        } else if(summon == 9){
+        } else if(summon == deathKing.summonNum){
             console.log("Beware for you are in the presence of the Death King.\nFight at your own risk..")
             battle(deathKing, character)
         } else{
@@ -105,7 +112,7 @@ function battle(enemy, character){
                 enemy.HP = enemy.HP - strongAttack
             } else {
                 console.log("You missed...\n the " + enemy.name + " attacked back for " + enemy.attacK + " damage!")
-                character.HP = character.HP - parseInt(enemy.attacK)
+                character.HP = character.HP - enemy.attacK
                 if(character.HP <= 0){
                     console.log("GAME OVER!\n" + character)
                 }
@@ -115,7 +122,7 @@ function battle(enemy, character){
             console.log("You switfly attacked for " + quickAttack + " damage!")
             enemy.HP = enemy.HP - quickAttack
             console.log("The " + enemy.name + " attacked back for " + enemy.attacK + " damage!")
-            character.HP = character.HP - parseInt(enemy.attacK)
+            character.HP = character.HP - enemy.attacK
             if(character.HP <= 0){
                 console.log("GAME OVER!\n" + character)
             }
@@ -130,13 +137,14 @@ function battle(enemy, character){
                 advanceOrStats()
             } else {
                 console.log("The enemy cuts you off and attacks for " + enemy.attacK + " damage!")
-                character.HP = character.HP - parseInt(enemy.attacK)
+                character.HP = character.HP - enemy.attacK
                 if(character.HP <= 0){
                     console.log("GAME OVER!\n" + character)
                 }
             }
         } else {
             console.log(character)
+            console.log(enemy)
         }
     }
     if(enemy.HP <= 0 && enemy.name != "Death King"){
